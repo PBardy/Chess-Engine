@@ -1,0 +1,117 @@
+.App {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+
+.output {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  width: 512px;
+  height: 512px;
+  margin-bottom: 1em;
+}
+
+.output div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.output div::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+.output div:hover::after {
+  opacity: 0.2;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  text-align: center;
+  width: 512px;
+  padding: 1em 0em;
+}
+
+.rows {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  height: 512px;
+  padding: 0em 2em;
+}
+
+.cols div, .rows div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+input {
+  height: 40px;
+  text-indent: 10px;
+}
+
+button {
+  height: 40px;
+  width: 150px;
+}
+
+
+.history {
+  border: 1px solid #ddd;
+  height: 100%;
+  width: 320px;
+  margin-left: 2em;
+  background: #fff;
+  padding: 1.75em;
+  overflow-y: auto;
+}
+
+.message-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.message {
+  color: #222;
+  font-weight: 900;
+  font-size: 3rem;
+  text-transform: uppercase;
+  width: 512px;
+  height: 512px;
+  text-shadow: 2px 3px #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.message--visible {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+
+.message--invisible {
+  animation: fadeOut ease 2s;
+  -webkit-animation: fadeOut ease 2s;
+  -moz-animation: fadeOut ease 2s;
+  -o-animation: fadeOut ease 2s;
+  -ms-animation: fadeOut ease 2s;
+}
